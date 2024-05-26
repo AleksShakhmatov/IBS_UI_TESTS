@@ -1,11 +1,11 @@
-package tests;
+package pages;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import pages.ContactsPage;
+import tests.TestBase;
 
 @Epic("UI сайта IBS.ru")
 @Feature("Страница контактов")
@@ -24,7 +24,7 @@ public class ContactsPageTests extends TestBase {
             "Уфа | ул. Менделеева, д. 130, блок А, 2 этаж, офис 201"
     })
     @Severity(SeverityLevel.BLOCKER)
-    @Owner("aydarium")
+    @Owner("AleksSh")
     void regionSelectionTest(String city, String address) {
         contactsPage.openPage()
                 .clickRegion(city)
@@ -40,8 +40,8 @@ public class ContactsPageTests extends TestBase {
             "Ульяновск | ул. Марата д.8Б, 3 этаж"
     })
     @Severity(SeverityLevel.NORMAL)
-    @Owner("aydarium")
-    void mapInfoCollapsibleTest(String city, String address){
+    @Owner("AleksSh")
+    void mapInfoCollapsibleTest(String city, String address) {
         contactsPage.openPage()
                 .clickRegion(city)
                 .clickMapInfo()
@@ -51,7 +51,7 @@ public class ContactsPageTests extends TestBase {
     @Test
     @DisplayName("Проверка отображения адреса электронной почты и номера телефона пресс-службы")
     @Severity(SeverityLevel.NORMAL)
-    @Owner("aydarium")
+    @Owner("AleksSh")
     void pressContactsTest() {
         contactsPage.openPage()
                 .checkPressEmail(pressEmail)

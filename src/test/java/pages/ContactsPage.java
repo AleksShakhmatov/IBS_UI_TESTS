@@ -1,4 +1,4 @@
-package pages.components;
+package pages;
 
 
 import com.codeborne.selenide.ElementsCollection;
@@ -11,13 +11,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ContactsPage {
-    private final SelenideElement
-            regionList = $(".contacts-tags"),
+    private final SelenideElement regionList = $(".contacts-tags"),
             mapInfoCollapsible = $$(".collapse-link").find(visible),
             pressEmail = $(".press-contacts").$(byText("E-mail")).parent(),
             pressPhoneNumber = $(".press-contacts").$(byText("Телефон")).parent();
-    private final ElementsCollection addressItems = $$("[itemprop=address]"),
-            mapInfoAddressItems = $$(".map-info").find(visible).$$("[itemprop=address]");
+    private final ElementsCollection addressItems = $$("[itemprop=address]"), mapInfoAddressItems = $$(".map-info").find(visible).$$("[itemprop=address]");
 
     @Step("Открываем страницу контактов")
     public ContactsPage openPage() {
