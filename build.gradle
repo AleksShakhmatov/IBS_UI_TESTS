@@ -3,6 +3,7 @@ plugins {
     id 'io.qameta.allure' version '2.11.2'
 }
 
+
 group = "ru.coluchy"
 version = "1.0-SNAPSHOT"
 
