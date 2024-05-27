@@ -1,55 +1,57 @@
+# Проект по автоматизации тестовых сценариев для сайта компании IBS
 
-# Проект по автоматизации тестовых сценариев для сайта группы компаний [IBS](https://ibs.ru/)
-<p align="center">
-<a href="https://ibs.ru/"><img title="Логотип группы компаний IBS" src="media/logos/IBS.jpg"></a>
-</p>
-
-## :scroll: Содержание
-
-- [Используемый стек](#computer-используемый-стек)
-- [Покрытый функционал](#male_detective-покрытый-функционал)
-- [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#-сборка-в-jenkins)
-- [Пример Allure-отчёта](#-пример-allure-отчёта)
-- [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
-- [Интеграция с Jira](#-интеграция-с-jira)
-- [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
-- [Видео запуска тестов в Selenoid](#-видео-запуска-тестов-в-selenoid)
-
-## :computer: Используемый стек
-
-<p align="center">
-<a href="https://www.jetbrains.com/idea/"><img width="6%" title="IntelliJ IDEA" src="media/logos/IntelijIDEA.svg"></a> 
-<a href="https://www.java.com/"><img width="6%" title="Java" src="media/logos/Java.svg"></a> 
-<a href="https://gradle.org/"><img width="6%" title="Gradle" src="media/logos/Gradle.svg"></a> 
-<a href="https://selenide.org/"><img width="6%" title="Selenide" src="media/logos/Selenide.svg"></a> 
-<a href="https://aerokube.com/selenoid/"><img width="6%" title="Selenoid" src="media/logos/Selenoid.svg"></a> 
-<a href="https://github.com/allure-framework/allure2"><img width="6%" title="Allure Report" src="media/logos/AllureReport.svg"></a> 
-<a href="https://junit.org/junit5/"><img width="6%" title="JUnit5" src="media/logos/JUnit5.svg"></a> 
-<a href="https://github.com/"><img width="6%" title="GitHub" src="media/logos/GitHub.svg"></a> 
-<a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/logos/Jenkins.svg"></a> 
-<a href="https://telegram.org/"><img width="6%" title="Telegram" src="media/logos/Telegram.svg"></a> 
-<a href="https://qameta.io/"><img width="6%" title="Allure TestOps" src="media/logos/AllureTestOps.svg"></a> 
-<a href="https://www.atlassian.com/ru/software/jira/"><img width="6%" title="Jira" src="media/logos/Jira.svg"></a> 
-</p>
-
-Тесты в проекте написаны на языке <code>Java</code> с использованием фреймворка для тестирования [Selenide](https://selenide.org/) и сборщика <code>Gradle</code>. <code>JUnit 5</code> задействован в качестве фреймворка модульного тестирования.
+Тесты в проекте написаны на языке <code>Java</code> с использованием фреймворка  [Selenide](https://selenide.org/) и сборщика <code>Gradle</code>. <code>JUnit 5</code> задействован в качестве фреймворка модульного тестирования.
 При прогоне тестов для удалённого запуска браузеров используется [Selenoid](https://aerokube.com/selenoid/).
 Для удаленного запуска реализована сборка в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота. Также реализована интеграция с <code>Allure TestOps</code> и <code>Jira</code>.
 
-## :male_detective: Покрытый функционал
 
-Тесты в проекте покрывают главную страницу сайта и страницы вакансий, контактов и проектов. Локаторы элементов на страницах и действия с ними вынесены в отдельные классы PageObject, повторяющиеся компоненты (раздел поиска и боковое меню) отделены от классов страниц. Где это уместно, используется параметризация тестов.
+## <img width="40" height="40" style="vertical-align:middle" title="Folder" src="media/images/yellow-computer-folder.png"> Содержание:
 
-## :arrow_forward: Запуск автотестов
+- <a href="#stech">Используемый стек технологий и инструментов</a>
+- <a href="#check">Реализованные проверки</a>
+- <a href="#engine">Запуск автотестов</a>
+- <a href="#build">Сборка в Jenkins</a>
+- <a href="#report">Интеграция с Allure</a>
+- <a href="#testops">Интеграция с Allure TestOps</a>
+- <a href="#jira">Интеграция с Jira</a>
+- <a href="#telegram">Уведомления в Telegram через бота</a>
+- <a href="#video">Видео отчет запуска тестов (Selenoid)</a>
 
-### Запуск тестов из терминала (с параметрами по умолчанию)
+<a id="stech"></a>
+## <img width="40" height="40" style="vertical-align:middle" title="Folder" src="media/images/programm.jpg"> Используемый стек технологий и инструментов
+
+| Java                                                    | IntelliJ  <br>  Idea                                            | GitHub                                                    | JUnit 5                                                   | Gradle                                                    | Selenide                                                    | Selenoid                                                    | Allure<br/>Report                                                | Allure <br> TestOps                                               | Jenkins                                                    | Jira                                                    |                                                    Telegram |
+|:--------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------:|
+| <img height="50" src="media/logo/Java.svg" width="50"/> | <img height="50" src="media/logo/Intelij_IDEA.svg" width="50"/> | <img height="50" src="media/logo/GitHub.svg" width="50"/> | <img height="50" src="media/logo/JUnit5.svg" width="50"/> | <img height="50" src="media/logo/Gradle.svg" width="50"/> | <img height="50" src="media/logo/Selenide.svg" width="50"/> | <img height="50" src="media/logo/Selenoid.svg" width="50"/> | <img height="50" src="media/logo/Allure_Report.svg" width="50"/> | <img height="50" src="media\logo\Allure_TestOps.svg" width="50"/> | <img height="50" src="media/logo/Jenkins.svg" width="50"/> | <img height="50" src="media/logo/Jira.svg" width="50"/> | <img height="50" src="media\logo\Telegram.svg" width="50"/> |
+
+
+<a id="chek"></a>
+##  <img width="40" height="40" style="vertical-align:middle" title="List" src="media/images/todo.png"> Реализованные проверки
+- Проверка открытия нужного сайта
+- Проверка языка сайта
+- Проверка контактов одного из филиалов компании
+- Проверка гамбургер-меню сайта
+- Проверка наличия строки поиска
+- Проверка наличия адресов социальных сетей
+
+<a id="engine"></a>
+## <img height="40" src="media/images/play.jpg" title="Play" width="40"/> Запуск автотестов
+
+
+### Запуск тестов из терминала локально:
 ```
-gradle clean test
+gradle clean test 
 ```
-
-### Запуск тестов из Jenkins (с указанием параметров)
+### Запуск тестов из терминала удаленно (Selenoid):
+```      
+gradle clean test -Denv=main
 ```
+### Запуск тестов c параметрами по умолчанию в Jenkins:
+```
+clean main test
+```
+### Запуск тестов c задаными параметрами в Jenkins:
+```   
 clean test
 -DbrowserRemoteUrl=${REMOTE_URL}
 -Dbrowser=${BROWSER}
@@ -57,90 +59,90 @@ clean test
 -DbrowserSize=${BROWSER_RES}
 -Denv=remote
 ```
+#### Обозначение ключей параметров:
+- <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+- <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По умолчанию – <code>chrome</code>
+- <code>BROWSER_VER</code> – версия браузера, в которой будут выполняться тесты. По умолчанию – <code>122.0</code>
+- <code>BROWSER_RES</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>
 
-### Параметры сборки
+<a id="build"></a>
+## <img width="40" height="40" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
 
-* <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
-* <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По умолчанию – <code>chrome</code>
-* <code>BROWSER_VER</code> – версия браузера, в которой будут выполняться тесты. По умолчанию – <code>122.0</code>
-* <code>BROWSER_RES</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>
-
-<code>-Denv=remote</code> загружает конфигурационный файл удалённого запуска, активирующий дополнительные настройки автотестов, которые не используются при локальном запуске.
-
-## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/Jenkins.svg"> [Сборка](https://jenkins.autotests.cloud/job/C24-MolokoVelosiped-ibs-ui-tests/) в Jenkins
-
-Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code> и нажать кнопку <code>Build</code>.
+Для запуска сборки необходимо перейти в раздел **"Build with Parameters"** и нажать кнопку **"Build"**.
 <p align="center">
-<img title="Сборка в Jenkins" src="media/screencaps/Jenkins.png">
-</p>
-После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
-
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/AllureReport.svg"> [Пример](https://jenkins.autotests.cloud/job/C24-MolokoVelosiped-ibs-ui-tests/allure/) Allure-отчёта
-
-<p align="center">
-<img title="Общий вид отчёта Allure" src="media/screencaps/AllureOverview.png">
+<img title="Jenkins Build" src="media/screenshots/JenkinsBuild.png"> 
 </p>
 
-### Содержание Allure-отчёта
+После выполнения сборки, в блоке **Build History** напротив номера сборки появятся значки <img src="media\logo\Allure_TestOps.svg" width="15" height="15">
+и <img src="media\logo\Allure_Report.svg" width="15" height="15"> , при клике на которые откроются соответствующие
+артефакты.
 
-* Тест-кейсы, разделённые на папки по сьютам или фичерам
-* Описание шагов тестов
-* Скриншот страницы на последнем шаге
-* Page Source
-* Логи браузерной консоли (не поддерживается в Firefox)
-* Видео выполнения автотеста
+## <img width="40" height="40" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Интеграция с Allure
 
-### Раздел Suites
+<a id="report"></a>
+### Allure отчет
 
-<p align="center">
-<img title="Раздел Suites отчёта Allure" src="media/screencaps/AllureSuites.png">
+<p align="center">   
+<img title="Jenkins Build" src="media/screenshots/Allure_Report1.png">    
 </p>
 
-### Раздел Behaviors
+### Подробнее
+<p align="center">     
+<img title="Jenkins Build" src="media/screenshots/Allure_Report2.png">    
+</p>       
 
-<p align="center">
-<img title="Раздел Behaviors отчёта Allure" src="media/screencaps/AllureBehaviors.png">
+<p align="center">     
+<img title="Jenkins Build" src="media/screenshots/Allure_Report3.png">    
+</p>  
+
+<p align="center">     
+<img title="Jenkins Build" src="media/screenshots/Allure_Report4.png">    
+</p>  
+
+## <img width="40" height="40" style="vertical-align:middle" title="Allure TestOps" src="media/logo/Allure_TestOps.svg"> Интеграция с Allure TestOps
+
+
+<a id="testops"></a>
+### Allure TestOps отчет
+
+#### Overview
+
+<p align="center">    
+<img title="Allure TestOps Overview" src="media/screenshots/Allure_TestOps1.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logos/AllureTestOps.svg"> [Интеграция](https://allure.autotests.cloud/project/4174/dashboards) с Allure TestOps
-
-На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них добавлены и проходятся вручную, сколько автоматизированы. Новые тесты приходят по интеграции при каждом запуске сборки вместе с результатами их прохождения.
-
+#### DashBoards
 <p align="center">
-<img title="Дэшборд Allure TestOps" src="media/screencaps/TestOpsDashboard.png">
+<img title="Allure TestOps DashBoards" src="media/screenshots/Allure_TestOps2.png">
 </p>
 
-### Тест-кейс, сгенерированный из автотеста
+#### Подробнее
 
 <p align="center">
-<img title="Результаты теста в Allure TestOps №1" src="media/screencaps/TestOpsResults1.png">
+<img title="Test Results in Alure TestOps" src="media/screenshots/Allure_TestOps3.png">
 </p>
 
-### Тест-кейс ручной проверки
+
+<a id="jira"></a>
+## <img width="40" height="40" style="vertical-align:middle" title="Jira" src="media/logo/Jira.svg"> Интеграция с Jira
+
 
 <p align="center">
-<img title="Результаты теста в Allure TestOps №2" src="media/screencaps/TestOpsResults2.png">
+<img title="Jira Task" src="media/screenshots/Jira.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logos/Jira.svg"> [Интеграция](https://jira.autotests.cloud/browse/HOMEWORK-1188) с Jira
+## <img width="40" height="40" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram через бота
 
-Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображаются привязанные тест-кейсы и результаты их запусков.
 
+<a id="telegram"></a>
 <p align="center">
-<img title="Тикет в Jira" src="media/screencaps/Jira.png">
+<img title="Telegram Notifications" src="media/screenshots/Notifiacations.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> Уведомления в Telegram с использованием бота
 
-После завершения сборки специальный бот, созданный в <code>Telegram</code>, получает из Jenkins и отправляет сообщение с отчётом о прогоне тестов.
+<a id="video"></a>
+## <img width="40" height="40" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> Видео отчет запуска тестов (Selenoid)
 
 <p align="center">
-<img width="50%" title="Уведомление в Telegram" src="media/screencaps/Bot.png">
-</p>
-
-## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео запуска тестов в Selenoid
-
-В отчетах Allure для каждого теста прикреплён не только скриншот, но и видео прохождения теста, записанное Selenoid.
-<p align="center">
-  <img title="Видео, записанное Selenoid" src="media/video/Video.gif">
+  <img title="Selenoid Video" src="media/gifs/IBS.gif">
 </p>
