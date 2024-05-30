@@ -1,26 +1,31 @@
 package config;
+
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/${env}.properties"
-})
-public interface DriverConfig extends Config {
-    @DefaultValue("chrome")
-    String browser();
+        "classpath:config/${environment}.properties"})
 
-    @DefaultValue("122.0")
+public interface DriverConfig extends Config {
+    @Key("browserName")
+    @DefaultValue("chrome")
+    String browserName();
+
+    @Key("browserVersion")
+    @DefaultValue("100.0")
     String browserVersion();
 
+    @Key("browserSize")
     @DefaultValue("1920x1080")
     String browserSize();
 
-    @DefaultValue("eager")
+    @Key("pageLoadStrategy")
+    @DefaultValue("normal")
     String pageLoadStrategy();
 
-    @DefaultValue("false")
-    Boolean isRemote();
-
+    @Key("browserRemoteUrl")
+    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String browserRemoteUrl();
+
 }

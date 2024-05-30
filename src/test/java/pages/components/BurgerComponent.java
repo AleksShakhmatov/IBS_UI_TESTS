@@ -12,14 +12,12 @@ public class BurgerComponent {
             navigationSections = $(".navigation-sections");
 
     @Step("Нажимаем на кнопку гамбургер-меню (три полоски)")
-    public void click()
-    {
+    public void click() {
         burgerButton.click();
     }
 
     @Step("Проверяем наличие пункта '{value}' в гамбургер-меню")
-    public void checkIfSectionExists(String value)
-    {
+    public void checkIfSectionExists(String value) {
         navigationSections.shouldHave(text(value));
     }
 }

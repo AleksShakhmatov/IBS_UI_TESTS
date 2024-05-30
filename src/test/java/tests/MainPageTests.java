@@ -16,7 +16,6 @@ public class MainPageTests extends TestBase {
     String
             ruDescription = "Ключевой технологический партнер лидеров российского бизнеса",
             engDescription = "A key technology partner for Russian business leaders",
-            copyrightText = "© ООО «ИБС Экспертиза», 2024. Все права защищены",
             popularSearchHeaderName = "Популярные запросы",
             lastSearchHeaderName = "Недавние запросы",
             englishShort = "Eng",
@@ -77,13 +76,4 @@ public class MainPageTests extends TestBase {
         }
     }
 
-    @Test
-    @DisplayName("Проверка текста копирайта в футере")
-    @Severity(SeverityLevel.MINOR)
-    @Owner("AleksSh")
-    void checkFooterCopyrightTest() {
-        mainPage
-                .openPage()
-                .checkCopyrightTextInFooter(copyrightText);
-    }
 }

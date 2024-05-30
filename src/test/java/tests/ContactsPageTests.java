@@ -1,11 +1,11 @@
-package pages;
+package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import tests.TestBase;
+import pages.ContactsPage;
 
 @Epic("UI сайта IBS.ru")
 @Feature("Страница контактов")

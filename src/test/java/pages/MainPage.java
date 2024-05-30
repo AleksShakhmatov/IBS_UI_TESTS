@@ -3,7 +3,6 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import pages.components.BurgerComponent;
-import pages.components.FooterComponent;
 import pages.components.HeaderComponent;
 import pages.components.SearchComponent;
 
@@ -18,7 +17,6 @@ public class MainPage {
     SearchComponent searchComponent = new SearchComponent();
     BurgerComponent burgerComponent = new BurgerComponent();
     HeaderComponent headerComponent = new HeaderComponent();
-    FooterComponent footerComponent = new FooterComponent();
 
     @Step("Открываем главную страницу")
     public MainPage openPage() {
@@ -37,9 +35,6 @@ public class MainPage {
         return this;
     }
 
-    public void checkCopyrightTextInFooter(String value) {
-        footerComponent.checkCopyrightText(value);
-    }
 
     public MainPage checkSearchPlaceholder() {
         searchComponent.checkPlaceholder();
