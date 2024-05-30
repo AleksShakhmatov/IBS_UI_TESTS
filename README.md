@@ -99,7 +99,7 @@ clean test
 <img title="Jenkins Build" src="media/screenshots/Allure_Report4.png">    
 </p>  
 
-## <img width="40" height="40" style="vertical-align:middle" title="Allure TestOps" src="media/logo/Allure_TestOps.svg"> [Интеграция с Allure TestOps](https://allure.autotests.cloud/launch/39380)
+## <img width="40" height="40" style="vertical-align:middle" title="Allure TestOps" src="media/logo/Allure_TestOps.svg"> [https://allure.autotests.cloud/launch/39381)
 
 
 <a id="testops"></a>
@@ -141,7 +141,7 @@ clean test
 
 
 <a id="video"></a>
-## <img width="40" height="40" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> [Видео отчет запуска тестов (Selenoid)](https://selenoid.autotests.cloud/video/ba3808395969f38a82a56779c888403f.mp4)
+## <img width="40" height="40" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> [Видео отчет запуска тестов (Selenoid)](https://selenoid.autotests.cloud/video/687fa3f6a69295ac101cabe3b319a89e.mp4)
 <p align="center">
   <img title="Selenoid Video" src="media/gifs/IBS.gif">
 </p>
