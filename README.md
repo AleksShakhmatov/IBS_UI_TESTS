@@ -99,8 +99,7 @@ clean test
 <img title="Jenkins Build" src="media/screenshots/Allure_Report4.png">    
 </p>  
 
-## <img width="40" height="40" style="vertical-align:middle" title="Allure TestOps" src="media/logo/Allure_TestOps.svg"> 
-[TestOps](https://allure.autotests.cloud/launch/39381)
+## <img width="40" height="40" style="vertical-align:middle" title="Allure TestOps" src="media/logo/Allure_TestOps.svg"> [Интеграция с Allure TestOps](https://allure.autotests.cloud/launch/39381)
 
 
 <a id="testops"></a>
